@@ -19,7 +19,7 @@ public class StateCapitals2 {
         String filename = "/Users/mihrettadesse/NetBeansProjects/StateCapitals/src/StateCapitals.txt";
         Map<String, String> map = new HashMap<>();
         String delimiter = "::";
-
+        // read data from stateCapitals.txt file 
         readDataFromFile(map, filename, delimiter);
 
         int guess;
@@ -34,8 +34,10 @@ public class StateCapitals2 {
         int y = 1;
         for (String state : states) {
             if (y == guess) {
+                // to select the random state. much guess state and random state
                 randomState = state;
             }
+            // display state 
             statesString = statesString + state + ", ";
             y++;
 
@@ -50,7 +52,7 @@ public class StateCapitals2 {
         } else {
             System.out.println(capital + " IS WRONG!");
         }
-
+// state  guess
         System.out.print("HOW MANY STATES YOU WANT TO GUESS ? ");
         int guessCount = scan.nextInt();
         scan.nextLine();
@@ -86,6 +88,14 @@ public class StateCapitals2 {
         scan.close();
 
     }
+    /**
+     * This method is used to read state and capitals from txt file and put to hashmap
+     * @param map
+     * @param filename
+     * @param delimiter
+     * @throws FileNotFoundException
+     * @throws NoSuchElementException 
+     */
 
     public static void readDataFromFile(Map<String, String> map, String filename, String delimiter)
             throws FileNotFoundException, NoSuchElementException {
